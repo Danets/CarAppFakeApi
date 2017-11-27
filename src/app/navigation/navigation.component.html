@@ -1,0 +1,35 @@
+<div class="container-fluid clearfix">
+	<div class="row">
+		<div class="panel">
+			<div class="form-inline">
+				<div class="form-group">
+					<div class="col-md-3">
+						<select name="autocolonna" class="form-control">
+							<option value="">hello</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-3">
+						<input type="text" class="form-control"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-3">
+						<a routerLink="/cars"
+						routerLinkActive="active"
+						[routerLinkActiveOptions]="{exact:true}">Автомобили</a>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-3">
+						<a routerLink="/drivers"
+						routerLinkActive="active">Водители</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<router-outlet></router-outlet>
+

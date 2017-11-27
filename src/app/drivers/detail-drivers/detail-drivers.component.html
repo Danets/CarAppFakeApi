@@ -1,0 +1,34 @@
+<div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="driver">
+	<div class="ui-grid-row">
+		<div class="ui-grid-col-6">
+			<button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+		</div>
+		<div class="ui-grid-col-6">
+			<button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+		</div>
+	</div>
+	<div class="ui-grid-row">
+		<div class="ui-grid-col-6">
+		<input pInputText id="familia" [(ngModel)]="driver.familia" />
+		</div>
+		<div class="ui-grid-col-6">
+			<input pInputText [(ngModel)]="driver.payment" />
+		</div>
+	</div>
+
+	<div class="ui-grid-row">
+		<div class="ui-grid-col-12">
+			<label for="phone">Phone</label>
+			<input pInputText id="phone" [(ngModel)]="driver.phone" />
+		</div>
+	</div>
+	<!--<div class="ui-grid-row">
+		<div class="ui-grid-col-4">
+			<label for="id">Водители</label>
+			<input pInputText id="id" [(ngModel)]="driver.id" />
+		</div>
+		<div class="ui-grid-col-8">
+			<input pInputText [(ngModel)]="driver.familia" />
+		</div>
+	</div>-->
+</div>

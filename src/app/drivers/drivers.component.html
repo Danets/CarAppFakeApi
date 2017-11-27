@@ -1,0 +1,47 @@
+<!-- DINAMIC -->
+<div class="col-md-8">
+	<p-dataTable [value]="drivers" selectionMode="single" [(selection)]="selectedDriver" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+    <p-header>CRUD for Drivers</p-header>
+    <p-column field="id" header="Позывной" [sortable]="true"></p-column>
+    <p-column field="familia" header="ФИО" [sortable]="true"></p-column>
+    <p-column field="phone" header="Телефон" [sortable]="true"></p-column>
+    <p-column field="payment" header="Баланс" [sortable]="true"></p-column>
+    <p-footer><div class="ui-helper-clearfix" style="width:100%">
+    <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button>
+        <button type="button" pButton icon="fa-check" (click)="onPut()" label="Store"></button>
+        <button type="button" pButton icon="fa-close" (click)="onGet()" label="Fetch"></button>
+    </div></p-footer>
+</p-dataTable>
+
+<p-dialog header="Driver Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="driver">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="id">Id</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="id" [(ngModel)]="driver.id" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="familia">Familia</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="familia" [(ngModel)]="driver.familia" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="phone">Phone</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="phone" [(ngModel)]="driver.phone" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="payment">Payment</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="payment" [(ngModel)]="driver.payment" /></div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+            <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+        </div>
+    </p-footer>
+</p-dialog>
+</div>
+<div class="col-md-4">
+	<app-detail-drivers [driver]="selectedDriver"></app-detail-drivers>
+</div>
+
+
